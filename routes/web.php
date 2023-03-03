@@ -20,8 +20,9 @@ use App\Http\Controllers\ServicioController;
 //     Route::get('services', [ServicioController::class, 'show']); 
 // });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/', [ServicioController::class, 'home'])->name('home');
-
+Route::post('/guardar-service', [ServicioController::class, 'store'])->name('guardar-service');
 Route::get('/services', [ServicioController::class, 'create'])->name('services');
+Route::get('/service/{filename}', [ServicioController::class, 'getImage'])->name('service-file');
